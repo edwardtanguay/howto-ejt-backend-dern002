@@ -6,9 +6,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 const mode = process.env.MODE;
 const baseUrl = process.env.BASE_URL;
-const url = mode === 'development' ? baseUrl : `${baseUrl}:${port}`;
-const app = express();
 const port = process.env.PORT;
+const url = mode === 'development' ? `${baseUrl}:${port}` : baseUrl;
+const app = express();
 app.use(cors());
 
 app.use(express.static('public'));
