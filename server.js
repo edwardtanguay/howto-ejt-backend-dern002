@@ -1,10 +1,13 @@
 import express from 'express';
 import { siteData } from './src/models.js';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
+dotenv.config();
+const baseUrl = `http://${process.env.BASE_URL}`;
 const app = express();
 const port = process.env.PORT || 3007;
-const url = `http://localhost:${port}`;
+const url = `${baseUrl}:${port}`;
 app.use(cors());
 
 app.use(express.static('public'));
