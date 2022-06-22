@@ -4,7 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const baseUrl = `http://${process.env.BASE_URL}`;
+const baseUrl = process.env.BASE_URL;
 const app = express();
 const port = process.env.PORT || 3007;
 const url = `${baseUrl}:${port}`;
